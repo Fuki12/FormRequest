@@ -11,13 +11,9 @@ use Inertia\Response;
 
 class CategoryController extends Controller
 {
-    public function index(): Response
+    public function index()
     {
-        $categories = Category::orderBy('id', 'desc')->get();
-
-        return Inertia::render('Categories/Index', [
-            'categories' => $categories,
-        ]);
+        return redirect()->route('categories.create');
     }
 
     public function create(): Response
